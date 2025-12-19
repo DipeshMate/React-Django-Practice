@@ -1,0 +1,95 @@
+
+/*-------------------------TASK POP-UP COMPONENT-----------------------------*/
+
+
+.task-popup {
+    position: absolute; /* Stays in the same relative positioning context */
+    top: calc(100% / 3); /* Adjust as needed for positioning */
+    left: 20rem; /* Center horizontally */
+    transform: translate(-50%, -10%); /* Adjust for centering */
+    background-color: #161b22;
+    width: clamp(25rem, 35cqi, 35rem);
+    aspect-ratio: 10 / 7;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* Ensures it's above other elements */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 1; /* Visible */
+}
+
+/* Add styles for a hidden state if you want to toggle visibility */
+.task-popup.hidden {
+    opacity: 0; /* Hidden */
+    transform: translate(-50%, -20%); /* Optional animation for hiding */
+}
+
+  
+  @keyframes popup {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+
+.task-popup textarea{
+    width: clamp(16rem, 16cqi, 22rem);
+    aspect-ratio: 3/2;
+    resize: none;
+    background-color: #000;
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: #78879e;
+    transition: border 0.5rem;
+}
+.task-popup textarea:focus{
+    border: .1rem solid #00a3ff;
+}
+.task-popup textarea::placeholder{
+    font-size: clamp(1rem 0.8cqi, 1.2rem);
+    color: #78879e;
+}
+.task-popup textarea:focus::placeholder{
+    color: transparent;
+}
+
+.task-popup-btn{
+    width: clamp(10rem, 15cqi, 25rem);
+    height: 3rem;
+    background-color: #ef9811;
+    color: #fff;
+    font-family: 'Montserrat', 'sans-serif'; 
+    font-size: clamp(1rem, 1cqi,2rem);
+    letter-spacing: 0.2rem;
+    border: none;
+    box-shadow: 0 0 0.5rem 1 rem rgba(239, 144, 17, 0.2);
+    cursor: pointer;
+}
+
+.task-popup-btn:active{
+    transform: translateY(0.1rem);
+}
+
+.close-task-popup{
+     position: absolute;
+     top: 1rem;
+     right: 1rem;
+     background-color: transparent;
+     border: none;
+}
+
+.close-task-popup i{
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+}
